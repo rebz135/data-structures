@@ -16,7 +16,6 @@ var Queue = function() {
 
   someInstance.dequeue = function() {
     let temp = storage[Math.min(...keys)];
-    console.log(storage[Math.min(...keys)]);
     delete storage[Math.min(...keys)];
     keys = keys.slice(1);
     return temp;
