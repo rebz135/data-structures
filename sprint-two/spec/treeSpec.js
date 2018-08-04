@@ -1,3 +1,4 @@
+
 describe('tree', function() {
   var tree;
 
@@ -51,5 +52,13 @@ describe('tree', function() {
     tree.removeChild(5);
     expect(tree.contains(5)).to.equal(false);
   });
-
+  
+  it('removeFromParent should remove child from parent tree', function() {
+    tree.addChild(5);
+    tree.addChild(6);
+    tree.children[0].addChild(7);
+    tree.children[1].addChild(8);
+    tree.children[0].children[0].removeFromParent();
+    expect(tree.children[0].contains(7)).to.equal(false);
+  });
 });
