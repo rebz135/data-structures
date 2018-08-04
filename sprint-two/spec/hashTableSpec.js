@@ -74,4 +74,16 @@ describe('hashTable', function() {
     hashTable.remove('Mr.');
     expect(hashTable._limit).to.equal(8);
   });
+  it ('resizing should work when adding 6000 values', function() {
+    let keyValueArray = [];
+    for (let i = 0; i < 12000; i += 2) {
+      keyValueArray.push([i.toString(), (i + 1).toString()]);
+    }
+    _.each(keyValueArray, function(keyVal) {
+      let val1 = keyVal[0];
+      let val2 = keyVal[1];
+      hashTable.insert(val1, val2);
+      expect(hashTable.retrieve(val1)).to.equal(val2);
+    });
+  }); 
 });
