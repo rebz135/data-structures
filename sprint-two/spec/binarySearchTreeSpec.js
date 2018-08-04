@@ -37,4 +37,14 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+  
+  // it('should work with 2,500 nodes', function() {
+  //   for (let i = 0; i < 2501; i++) {
+  //     binarySearchTree.insert(i);
+  //     binarySearchTree.insert(5000 - i);
+  //   }
+  //   for (let i = 0; i < 5000; i += 100) {
+  //     expect(binarySearchTree.contains(i)).to.equal(true);
+  //   }
+  // });
 });

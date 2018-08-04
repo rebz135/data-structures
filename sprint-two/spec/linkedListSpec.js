@@ -50,6 +50,10 @@ describe('linkedList', function() {
     linkedList.removeHead();
     expect(linkedList.contains(4)).to.equal(false);
   });
+  
+  it('head and tail should be the same if only one node is added', function() {
+    linkedList.addToTail(5000000);
+    expect(linkedList.head === linkedList.tail).to.equal(true);
+  });
 
-  // add more tests here to test the functionality of linkedList
 });

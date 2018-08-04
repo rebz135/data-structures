@@ -30,12 +30,12 @@ var LinkedList = function() {
         return true;
       }
       currentNode = currentNode.next;
-    };
+    }
     return false;  
   };  
   
   return list;
-}
+};
 
 
 var Node = function(value) {

@@ -16,7 +16,7 @@ var BSTMethods = {
       } else {
         this.left = newTree;
       }
-    } else {
+    } else if (val > this.value) {
       if (this.right) {
         this.right.insert(val);
       } else {
@@ -52,6 +52,6 @@ var BSTMethods = {
 /*
  * Complexity: What is the time complexity of the above functions?
  insert: O(n)
- contains: O(n)
+ contains: O(log n)
  depthFirstLog: O(n)
  */

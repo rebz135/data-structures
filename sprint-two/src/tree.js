@@ -15,6 +15,16 @@ treeMethods.addChild = function(value) {
   this.children.push(Tree(value));
 };
 
+treeMethods.removeChild = function(target) {
+  let newChildren = [];
+  this.children.forEach(function(tree, index) {
+    if (!tree.value === target) {
+      newChildren.push(index);
+    }
+  });
+  this.children = newChildren;
+};
+
 treeMethods.contains = function(target) {
   let result = false;
   let checker = function(tree) {
@@ -34,6 +44,7 @@ treeMethods.contains = function(target) {
   
   return checker(this);
 };
+
 
 
 
