@@ -28,6 +28,7 @@ var LimitedArray = function(limit) {
       callback(storage[i], i, storage);
     }
   };
+  
 
   var checkLimit = function(index) {
     if (typeof index !== 'number') {
@@ -45,6 +46,8 @@ var LimitedArray = function(limit) {
 // to turn any string into an integer that is well-distributed between the
 // numbers 0 and `max`
 var getIndexBelowMaxForKey = function(str, max) {
+  if(str === undefined) {
+  }
   var hash = 0;
   for (var i = 0; i < str.length; i++) {
     hash = (hash << 5) + hash + str.charCodeAt(i);
