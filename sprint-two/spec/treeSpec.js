@@ -61,4 +61,19 @@ describe('tree', function() {
     tree.children[0].children[0].removeFromParent();
     expect(tree.children[0].contains(7)).to.equal(false);
   });
+  
+  it('should correctly apply callback to every value', function() {
+    let arr = [];
+    tree.addChild(5);
+    tree.addChild(6);
+    tree.addChild(7);
+    tree.addChild(8);
+    tree.addChild(9);
+    tree.addChild(5);
+    let addToArray = function(val) {
+      arr.push(val);
+    };
+    tree.traverse(addToArray);
+    expect(arr).to.eql([5, 6, 7, 8, 9, 5, undefined]);
+  });
 });

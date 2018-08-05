@@ -58,8 +58,18 @@ treeMethods.contains = function(target) {
   return checker(this);
 };
 
-
-
+treeMethods.traverse = function(callback) {
+  let value = this.value;
+  let checker = function(tree) {
+    if (tree.children.length > 0) {
+      tree.children.forEach(function(elem) {
+        checker(elem);
+      });
+    }
+    callback(tree.value);
+  }; 
+  checker(this);
+};
 
 /*
  * Complexity: What is the time complexity of the above functions?

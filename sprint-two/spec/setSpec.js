@@ -32,4 +32,20 @@ describe('set', function() {
       expect(set.contains(i)).to.equal(true);
     }
   });
+  
+  it('should work with any object input value', function() {
+    let obj = {a:1};
+    let arr = [1,2,3];
+    let num = 1;
+    set.add(obj);
+    set.add(arr);
+    set.add(num);
+    set.add(null);
+    
+    expect(set.contains(obj)).to.equal(true);
+    expect(set.contains(arr)).to.equal(true);
+    expect(set.contains(1)).to.equal(true);
+    expect(set.contains(null)).to.equal(true);
+
+  });
 });
